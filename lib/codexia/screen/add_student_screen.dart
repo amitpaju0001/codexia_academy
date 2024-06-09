@@ -14,7 +14,8 @@ class _AddStudentScreenState extends State<AddStudentScreen> {
   final TextEditingController feesController = TextEditingController();
   final TextEditingController villageController = TextEditingController();
   final TextEditingController joinDateController = TextEditingController();
-  final GlobalKey<FormState> _formKey = GlobalKey();
+  final GlobalKey<FormState> formKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +25,7 @@ class _AddStudentScreenState extends State<AddStudentScreen> {
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Form(
-          key:  _formKey,
+          key:  formKey,
           child: Column(
             children: [
               ReuseTextField(
@@ -55,7 +56,7 @@ class _AddStudentScreenState extends State<AddStudentScreen> {
               const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () async {
-                  if (_formKey.currentState?.validate()??false) {
+                  if (formKey.currentState?.validate()??false) {
                     String name = nameController.text;
                     String fatherName = fatherNameController.text;
                     String fees = feesController.text;
