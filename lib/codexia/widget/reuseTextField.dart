@@ -3,18 +3,20 @@ import 'package:flutter/material.dart';
 class ReuseTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
+  final String? Function(String?)? validator;
 
   const ReuseTextField({
     super.key,
     required this.controller,
     required this.hintText,
+    required this.validator
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: TextField(
+      child: TextFormField(
         controller: controller,
         decoration: InputDecoration(
           labelText: hintText,
@@ -32,6 +34,7 @@ class ReuseTextField extends StatelessWidget {
           ),
           contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         ),
+        validator: validator,
       ),
     );
   }

@@ -5,11 +5,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefService{
   static const String studentKey = 'studentDetails';
-
  static Future addStudents (StudentModel student)async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     Map<String, dynamic> json = student.toJson();
-
     String stdString = jsonEncode(json);
     List<String> stdList = sharedPreferences.getStringList(studentKey) ?? [];
     stdList.add(stdString);
