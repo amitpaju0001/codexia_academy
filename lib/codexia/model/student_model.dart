@@ -4,13 +4,15 @@ class StudentModel {
   String stdFees;
   String stdVillage;
   String stdJoinDate;
+  String stdImage;
 
   StudentModel(
       {required this.stdName,
       required this.stdFatherName,
       required this.stdFees,
       required this.stdVillage,
-      required this.stdJoinDate});
+      required this.stdJoinDate,
+      required this.stdImage});
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = {
@@ -29,6 +31,8 @@ class StudentModel {
         stdFatherName: studentMap['fatherName'],
         stdFees: studentMap['fees'],
         stdVillage: studentMap['village'],
-        stdJoinDate: studentMap['joinDate']);
+        stdJoinDate: studentMap['joinDat,e'],
+      stdImage: studentMap['image'],
+    );
   }
 }

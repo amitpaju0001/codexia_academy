@@ -14,6 +14,7 @@ class _AddStudentScreenState extends State<AddStudentScreen> {
   final TextEditingController feesController = TextEditingController();
   final TextEditingController villageController = TextEditingController();
   final TextEditingController joinDateController = TextEditingController();
+  final TextEditingController imageController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey();
 
   @override
@@ -62,12 +63,14 @@ class _AddStudentScreenState extends State<AddStudentScreen> {
                     String fees = feesController.text;
                     String village = villageController.text;
                     String joinDate = joinDateController.text;
+                    String image = imageController.text;
                     StudentModel student = StudentModel(
                       stdName: name,
                       stdFatherName: fatherName,
                       stdFees: fees,
                       stdVillage: village,
                       stdJoinDate: joinDate,
+                      stdImage: image,
                     );
                     await SharedPrefService.addStudents(student);
                     Navigator.pop(context);

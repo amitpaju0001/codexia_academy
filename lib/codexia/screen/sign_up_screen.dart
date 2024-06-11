@@ -39,9 +39,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: 16,
                 ),
                  Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+                  padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
                   child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: StringConst.signUpName,
                       border: OutlineInputBorder(),
                       prefixIcon: Icon(Icons.person),
@@ -50,9 +50,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                  Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+                  padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
                   child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: StringConst.signUpEmail,
                       border: OutlineInputBorder(),
                       prefixIcon: Icon(Icons.email),
@@ -61,9 +61,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                  Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+                  padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
                   child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: StringConst.signUpPhone,
                       border: OutlineInputBorder(),
                       prefixIcon: Icon(Icons.phone),
@@ -112,7 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => HomeScreen(),
+                                builder: (context) => const HomeScreen(),
                               ));
                         }
                         },
