@@ -26,7 +26,11 @@ class _HomeScreenState extends State<HomeScreen> {
       students = studentList;
     });
   }
-
+ void deleteStudent (StudentModel student){
+    setState(() {
+      students.remove(student);
+    });
+ }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
         itemCount: students.length,
           itemBuilder: (context, index) {
           StudentModel studentModel = students[index];
-          return StudentCardWidget(std: studentModel,);
+          return StudentCardWidget(std: studentModel, onDelete: () {
+            deleteStudent(students[index]);
+          },);
           },),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
