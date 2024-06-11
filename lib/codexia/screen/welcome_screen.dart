@@ -15,99 +15,101 @@ class WelcomeScreen extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.all(10),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 16,
-            ),
-            const SizedBox(
-              height: 100,
-            ),
-
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Image.asset( AssetsConst.welcomeImage,),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            const Text(
-              StringConst.codexiaName,
-              style: TextStyle(
-                  color: ColorConst.reuseBackgroundColor,
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
-                  wordSpacing: 2),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            const Text(
-              StringConst.codexiaSlogan,
-              style: TextStyle(
-                color: Colors.black54,
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 16,
               ),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Material(
-                  color: ColorConst.reuseBackgroundColor,
-                  borderRadius: BorderRadius.circular(10),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const LoginScreen(),
-                          ));
-                    },
-                    child: const Padding(
-                      padding:
-                      EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-                      child: Text(
-                        StringConst.logIn,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold),
+              const SizedBox(
+                height: 100,
+              ),
+          
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Image.asset( AssetsConst.welcomeImage,),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              const Text(
+                StringConst.codexiaName,
+                style: TextStyle(
+                    color: ColorConst.reuseBackgroundColor,
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1,
+                    wordSpacing: 2),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              const Text(
+                StringConst.codexiaSlogan,
+                style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Material(
+                    color: ColorConst.reuseBackgroundColor,
+                    borderRadius: BorderRadius.circular(10),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginScreen(),
+                            ));
+                      },
+                      child: const Padding(
+                        padding:
+                        EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                        child: Text(
+                          StringConst.logIn,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Material(
-                  color:ColorConst.reuseBackgroundColor,
-                  borderRadius: BorderRadius.circular(10),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SignUpScreen(),
-                          ));
-                    },
-                    child: const Padding(
-                      padding:
-                      EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-                      child: Text(
-                        StringConst.signUp,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold),
+                  Material(
+                    color:ColorConst.reuseBackgroundColor,
+                    borderRadius: BorderRadius.circular(10),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SignUpScreen(),
+                            ));
+                      },
+                      child: const Padding(
+                        padding:
+                        EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                        child: Text(
+                          StringConst.signUp,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            )
-          ],
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

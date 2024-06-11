@@ -41,12 +41,13 @@ class _HomeScreenState extends State<HomeScreen> {
           },),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-           await Navigator.push(
+          await Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) {
+            MaterialPageRoute(builder: (context,) {
               return const AddStudentScreen();
             }),
           );
+        loadStudents();
         },
         child: const Icon(Icons.add),
       ),
